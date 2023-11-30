@@ -2,12 +2,32 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import List from "../../components/List/List";
 import "./Category.scss";
+import useFetch from "../../components/hooks/useFetch";
 
 function Category() {
-  const param = useParams().id; //return dynamic routing of URL
-  const paramId = +param;
   const [maxPrice, setMaxPrice] = useState(1000);
   const [sort, setSort] = useState("");
+  const param = useParams().id; //return dynamic routing of URL
+  const paramId = +param;
+  const [selectSub, setSelectSub] = useState([]);
+
+  //fetch all subcategory has relation with same Category id
+  const {
+    data: subcategory,
+    error,
+    loading,
+  } = useFetch(`/sub-categories?filters[categories][id][$eq]=${paramId}`);
+
+  //category sorting
+  const filterBySubCategory = (e) => {
+    const isChecked = e.target.checked; // determine if checkbox is checked or not
+    const value = e.target.value;
+    isChecked
+      ? setSelectSub([...selectSub, value])
+      : setSelectSub(selectSub.filter((item) => item !== value));
+  };
+
+  //price sorting funcionalities
   const filterByPriceHandler = (e) => {
     setMaxPrice(e.target.value);
   };
@@ -18,18 +38,19 @@ function Category() {
       <div className="left">
         <div className="filterItem">
           <h2>Categories</h2>
-          <div className="filterItems">
-            <input type="checkbox" value="hat" id="shoes" />
-            <label htmlFor="shoes">Shoes</label>
-          </div>
-          <div className="filterItems">
-            <input type="checkbox" value="skirt" id="skirt" />
-            <label htmlFor="skirt">Skirt</label>
-          </div>
-          <div className="filterItems">
-            <input type="checkbox" value="coats" id="shoes" />
-            <label htmlFor="coats">Coats</label>
-          </div>
+          {subcategory.map((sub) => {
+            return (
+              <div className="filterItems" key={sub.id}>
+                <input
+                  type="checkbox"
+                  value={sub.id}
+                  id={sub.id}
+                  onChange={filterBySubCategory}
+                />
+                <label htmlFor="coats">{sub.attributes.title}</label>
+              </div>
+            );
+          })}
         </div>
         <div className="filterItem">
           <h2>Fliter by price</h2>
@@ -70,7 +91,7 @@ function Category() {
           src="https://images.pexels.com/photos/1884584/pexels-photo-1884584.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
           alt="heroImg"
         />
-        <List />
+        <List categoryID={paramId} subCategory={selectSub} />
       </div>
     </div>
   );

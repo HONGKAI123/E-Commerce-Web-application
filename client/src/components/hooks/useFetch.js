@@ -12,7 +12,7 @@ const useFetch = (url) => {
       try {
         setLoading(true);
         const response = await makeRequest.get(url); //get all prodcuts information
-        // setData(response.data.data);
+        setData(response.data.data);
       } catch (err) {
         setError(true);
         console.log(err);

@@ -8,7 +8,7 @@ function FeaturedProducts({ type }) {
   const { data, error, loading } = useFetch(
     `/products?populate=*&filters[type][$eq]=${type}`
   );
-  console.log(data);
+
   const products = data;
 
   return (
