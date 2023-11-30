@@ -1,0 +1,32 @@
+.category {
+  display: flex;
+  padding: 30px 50px;
+  .left {
+    flex: 0.8;
+    position: sticky;
+    height: 100%; //because sticky position, we need to use height;
+    top: 50px; //after move down to 50px, this item become sticky;
+    .filterItem {
+      margin-bottom: 30px;
+      h2 {
+        font-weight: 400;
+      }
+      .filterItems {
+        margin-bottom: 10px;
+        //  label {
+
+        //  }
+      }
+    }
+  }
+  .right {
+    height: 100%;
+    flex: 3.2;
+    .catImg {
+      width: 100%;
+      height: 35vh;
+
+      margin-bottom: 40px;
+    }
+  }
+}

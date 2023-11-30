@@ -1,0 +1,48 @@
+.footer {
+  margin: 100px 200px 20px 200px;
+  .footer-top {
+    display: flex;
+    gap: 35px;
+    .footer-item {
+      flex: 1; //每个item占用相同的空间
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      text-align: justify;
+      font-size: 14px;
+      h1 {
+        font-size: 18px;
+        font-weight: 500;
+        color: #555;
+      }
+      span {
+        color: gray;
+      }
+    }
+  }
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .footer-bottom-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      .logo {
+        color: black;
+        font-weight: bold;
+        font-size: 25px;
+      }
+      .copyright {
+        color: gray;
+        margin-left: 20px;
+        font-size: 12px;
+      }
+    }
+    .footer-bottom-right {
+      img {
+        height: 50px;
+      }
+    }
+  }
+}
