@@ -29,5 +29,5 @@ export const cartSlice = createSlice({
 console.log(cartSlice.actions);
 // Action creators are generated for each case reducer function
 export const { addToCart, emptyCart, deleteItem } = cartSlice.actions;
-
-export default cartSlice.reducer;
+//export Slice's reducer
+export default cartSlice.reducer; //export the unnamed reducer, we can give it any name when we import it.

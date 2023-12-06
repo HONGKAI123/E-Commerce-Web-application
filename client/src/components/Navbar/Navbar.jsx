@@ -7,7 +7,12 @@ import PersonIcon from "@mui/icons-material/Person";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
 import Cart from "../Cart/Cart";
+import { useSelector } from "react-redux";
+// import { store } from "../../redux/store";
 function Navbar() {
+  // const currentState = store.getState();
+  // console.log(currentState);
+  const products = useSelector((state) => state.cart.products);
   const [openCart, setOpenCart] = useState(false);
   return (
     <div className="navbar">
@@ -69,7 +74,7 @@ function Navbar() {
             <FavoriteBorderIcon />
             <div className="cart-icon" onClick={() => setOpenCart(!openCart)}>
               <ShoppingCartCheckoutIcon />
-              <span>0</span>
+              <span>{products.length}</span>
             </div>
           </div>
         </div>
