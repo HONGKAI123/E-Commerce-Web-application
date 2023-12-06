@@ -8,7 +8,7 @@
     flex: 0.5;
     gap: 10px;
     img {
-      height: 150px;
+      height: 25%;
       width: 100%;
       object-fit: cover;
       cursor: pointer;
@@ -16,10 +16,10 @@
     // border: 1px black solid;
   }
   .mainImg {
-    flex: 2;
+    flex: 1.5;
     img {
-      width: 100%;
-      object-fit: cover;
+      width: 90%;
+      object-fit: fill;
       max-height: 800px;
     }
   }

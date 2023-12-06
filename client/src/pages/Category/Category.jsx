@@ -31,6 +31,7 @@ function Category() {
   const filterByPriceHandler = (e) => {
     setMaxPrice(e.target.value);
   };
+
   const sortByHigherPriceHandler = () => setSort("desc");
   const sortByLowerPriceHandler = () => setSort("asc");
   return (
@@ -52,15 +53,22 @@ function Category() {
             );
           })}
         </div>
+
         <div className="filterItem">
           <h2>Fliter by price</h2>
-          <p>under {maxPrice}</p>
-          <input
-            type="range"
-            min="0"
-            max="2000"
-            onChange={filterByPriceHandler}
-          />
+          <div onChange={filterByPriceHandler}>
+            <input type="radio" id="500" name="filterPrice" value="500" />
+            <label htmlFor="500">Under 500</label>
+            <br />
+            <input type="radio" name="filterPrice" id="200" value="200" />
+            <label htmlFor="200">Under 200</label>
+            <br />
+            <input type="radio" name="filterPrice" id="100" value="100" />
+            <label htmlFor="100">Under 100</label>
+            <br />
+            <input type="radio" name="filterPrice" id="50" value="50" />
+            <label htmlFor="50">Under 50</label>
+          </div>
         </div>
         <div className="filterItem">
           <h2>Sort BY</h2>
@@ -91,7 +99,12 @@ function Category() {
           src="https://images.pexels.com/photos/1884584/pexels-photo-1884584.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
           alt="heroImg"
         />
-        <List categoryID={paramId} subCategory={selectSub} />
+        <List
+          categoryID={paramId}
+          subCategory={selectSub}
+          maxPrice={maxPrice}
+          sortBy={sort}
+        />
       </div>
     </div>
   );

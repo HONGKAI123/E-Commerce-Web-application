@@ -4,18 +4,20 @@ import { makeRequest } from "../../axios/makeRequest";
 
 // we don't need to write fetch code in each component (ie. category, single producrs)
 const useFetch = (url) => {
+  // console.log("new request");
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        setLoading(true);
+        // setLoading(true);
+
         const response = await makeRequest.get(url); //get all prodcuts information
         setData(response.data.data);
       } catch (err) {
-        setError(true);
-        console.log(err);
+        setError(err);
+        // console.log(err);
       }
       setLoading(false);
     };
