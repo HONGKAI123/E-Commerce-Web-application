@@ -1,12 +1,20 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./Cart.scss";
-import { deleteItem, emptyCart } from "../../redux/cartReducer";
+import {
+  deleteItem,
+  emptyCart,
+  increaseItem,
+  decreaseItem,
+} from "../../redux/cartReducer";
 import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
+import AddIcon from "@mui/icons-material/Add";
+import RemoveIcon from "@mui/icons-material/Remove";
 
 function Cart() {
   const shoppingCartList = useSelector((state) => state.cart.products);
   const dispatch = useDispatch();
+  console.log(shoppingCartList);
   let totalValue = 0;
   shoppingCartList.forEach((element) => {
     totalValue += element.price * element.quantity;
@@ -22,7 +30,9 @@ function Cart() {
             <h1>{item?.title}</h1>
             <p>{item?.desc?.substring(0, 100)}</p>
             <div className="price">
+              <RemoveIcon onClick={() => dispatch(decreaseItem(item.id))} />
               {item.quantity} x ${item.price}
+              <AddIcon onClick={() => dispatch(increaseItem(item.id))} />
             </div>
           </div>
 

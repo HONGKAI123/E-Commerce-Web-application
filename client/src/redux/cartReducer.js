@@ -24,10 +24,28 @@ export const cartSlice = createSlice({
         (item) => item.id !== action.payload
       );
     },
+    increaseItem: (state, action) => {
+      state.products = state.products.map((item) => {
+        if (item.id === action.payload) {
+          return { ...item, quantity: item.quantity + 1 };
+        }
+        return item;
+      });
+    },
+
+    decreaseItem: (state, action) => {
+      state.products = state.products.map((item) => {
+        if (item.id === action.payload) {
+          return { ...item, quantity: item.quantity - 1 };
+        }
+        return item;
+      });
+    },
   },
 });
 console.log(cartSlice.actions);
 // Action creators are generated for each case reducer function
-export const { addToCart, emptyCart, deleteItem } = cartSlice.actions;
+export const { addToCart, emptyCart, deleteItem, increaseItem, decreaseItem } =
+  cartSlice.actions;
 //export Slice's reducer
 export default cartSlice.reducer; //export the unnamed reducer, we can give it any name when we import it.
