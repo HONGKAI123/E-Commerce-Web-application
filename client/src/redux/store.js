@@ -13,6 +13,11 @@ import {
   REGISTER,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
+import userReducer from "./userReducer";
+// const rootReducer = {
+//   cart: cartReducer,
+//   auth: userReducer,
+// }
 
 const persistConfig = {
   key: "root",

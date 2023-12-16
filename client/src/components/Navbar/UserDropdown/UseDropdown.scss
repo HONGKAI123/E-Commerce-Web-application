@@ -1,0 +1,54 @@
+.dropdown-container {
+  right: 3%;
+  width: 15%;
+  height: 150px;
+  position: absolute;
+  background-color: white;
+  z-index: 1;
+  padding: 0.5rem;
+  box-shadow: 0 3px 8px 0 rgba(32, 32, 32, 0.25);
+  .container {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+    height: 200px;
+    .login {
+      width: 100%;
+      .btn-signin {
+        border-radius: 0.45rem;
+        background-color: rgba(231, 19, 36);
+        color: white;
+        font-weight: 500;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        cursor: pointer;
+        border: none;
+        margin-top: 20px;
+        width: 100%;
+      }
+      .btn-signin:hover {
+        background-color: rgb(175, 13, 13);
+      }
+    }
+
+    .btn-register {
+      border-radius: 0.45rem;
+      background-color: white;
+      color: black;
+      font-weight: 500;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      padding-top: 0.65rem;
+      padding-bottom: 0.75rem;
+      cursor: pointer;
+      text-align: center;
+      width: 100%;
+    }
+    .btn-register:hover {
+      background-color: rgb(243, 242, 236);
+    }
+  }
+}

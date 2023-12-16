@@ -18,4 +18,5 @@ isNew
 relation: 1. categories N to N 2. subCategories N to N
 
 //aviod lose item on shopping cart- redux-persit library store shopping cart information on clieng (sessionStorage for shopping cart )
-// 待做： 添加购物车增减数量功能
+// 待做： 添加购物车增减数量功能 完成
+添加支付页面显示购买商品图片功能

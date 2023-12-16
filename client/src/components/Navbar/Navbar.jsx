@@ -8,12 +8,16 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
 import Cart from "../Cart/Cart";
 import { useSelector } from "react-redux";
+import UserDropdown from "./UserDropdown/UserDropdown";
 // import { store } from "../../redux/store";
 function Navbar() {
   // const currentState = store.getState();
   // console.log(currentState);
   const products = useSelector((state) => state.cart.products);
   const [openCart, setOpenCart] = useState(false);
+  const [openUserDropdown, setOpenUserDropdown] = useState(false);
+  const openUser = () => setOpenUserDropdown(true);
+  const closeUser = () => setOpenUserDropdown(false);
   return (
     <div className="navbar">
       <div className="navbar-wrapper">
@@ -63,14 +67,18 @@ function Navbar() {
               Contact
             </Link>
           </div>
-          <div className="navbar-right-item">
-            <Link className="" to="/">
-              Stores
-            </Link>
-          </div>
+
           <div className="navbar-right-icons">
             <SearchIcon />
-            <PersonIcon />
+            <div
+              className="user-icon"
+              onMouseEnter={openUser}
+              onMouseLeave={closeUser}
+            >
+              <PersonIcon />
+              {openUserDropdown && <UserDropdown />}
+            </div>
+
             <FavoriteBorderIcon />
             <div className="cart-icon" onClick={() => setOpenCart(!openCart)}>
               <ShoppingCartCheckoutIcon />
@@ -79,6 +87,7 @@ function Navbar() {
           </div>
         </div>
       </div>
+
       {openCart && <Cart />}
     </div>
   );

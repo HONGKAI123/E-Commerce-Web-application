@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./Cart.scss";
 import {
@@ -15,6 +15,7 @@ import { makeRequest } from "../../axios/makeRequest";
 
 function Cart() {
   const shoppingCartList = useSelector((state) => state.cart.products);
+  const [info, setinfo] = useState(null);
   const dispatch = useDispatch();
   console.log(shoppingCartList);
   let totalValue = 0;
@@ -30,6 +31,8 @@ function Cart() {
       const res = await makeRequest.post("/orders", {
         products: shoppingCartList,
       });
+      setinfo(res);
+      console.log(info);
       await stripePayment.redirectToCheckout({
         sessionId: res.data.stripeSession.id,
       });
