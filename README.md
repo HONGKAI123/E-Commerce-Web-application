@@ -90,11 +90,11 @@ The project utilizes SQLite for database management. This setup allows for strai
 
 ### Homepage
 
-![Homepage](res/Img/homepage.png)
+![Homepage](res/Img/home.png)
 
 ### Footer
 
-![Footer](res/Img/footer.png)
+![Footer](res/Img/Footer.png)
 
 ### Checkout Page
 
