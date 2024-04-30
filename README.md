@@ -27,11 +27,11 @@ This e-commerce project is designed to explore the integration of content manage
 
 ## Architecture Diagram
 
-- **software-level diagram:**
-  (res/svg/software_diagram.drawio.svg)
-  (res/svg/database_Design.png)
+- **Software-Level Diagram:**
+  ![Software-Level Diagram](res/svg/software_diagram.drawio.svg)
 
-- **database-design diagram:**
+- **Database-Design Diagram:**
+  ![Database-Design Diagram](res/svg/database_Design.png)
 
 ## Main Features
 
