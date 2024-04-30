@@ -25,6 +25,14 @@ This e-commerce project is designed to explore the integration of content manage
 - **Payment Processing:**
   [![Stripe](https://img.shields.io/badge/Stripe-626CD9?style=flat&logo=stripe&logoColor=white)](https://stripe.com/)
 
+## Architecture Diagram
+
+- **software-level diagram:**
+  (res/svg/software_diagram.drawio.svg)
+  (res/svg/database_Design.png)
+
+- **database-design diagram:**
+
 ## Main Features
 
 - Browse products and categories
@@ -33,7 +41,19 @@ This e-commerce project is designed to explore the integration of content manage
 - Process orders
 - User registration (currently supports registration without login capability; users can add items to the cart and complete payments via Stripe without being logged in)
 
-## Installation and Setup
+## Installation and Setu## Installation and Setup
+
+### Prerequisites
+
+Before installing the backend, please ensure that your system has Node.js version 18.0 or higher installed. The current recommended version is 18.12.0. This is important to meet the software dependencies and ensure smooth operation of the backend.
+
+### Checking Node.js Version
+
+You can check your current version of Node.js by running the following command in your terminal:
+
+```bash
+node --version
+```
 
 ### Frontend
 
