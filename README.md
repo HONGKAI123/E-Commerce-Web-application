@@ -64,8 +64,8 @@ node --version
 2. Install dependencies and start the React app:
 
 ```bash
-  npm install
-  npm start
+npm install
+npm start
 ```
 
 ### Backend Server
@@ -73,34 +73,29 @@ node --version
 1. Navigate to the server folder:
 
 ```bash
-  cd server
+cd server
 ```
 
 2. Start the Strapi:
 
 ```bash
- npm run develop
+npm run develop
 ```
 
 ## DataBase
 
 The project utilizes SQLite for database management. This setup allows for straightforward manual data entry and efficient data retrieval, aligning with the needs of the e-commerce platform. If you need a structural diagram of the database or diagrams illustrating the frontend and backend architecture, please let me know, and I can provide more details or visuals.
 
-//Category
-title
-description
-img
-relation: products N to N
+## Sample screenshots
 
-//product
-title
-description
-img1
-img2
-price
-isNew
-relation: 1. categories N to N 2. subCategories N to N
+### Homepage
 
-//aviod lose item on shopping cart- redux-persit library store shopping cart information on clieng (sessionStorage for shopping cart )
-// 待做： 添加购物车增减数量功能 完成
-添加支付页面显示购买商品图片功能
+![Homepage](res/Img/homepage.png)
+
+### Footer
+
+![Footer](res/Img/footer.png)
+
+### Checkout Page
+
+![Checkout Page](res/Img/checkout.png)
